@@ -55,7 +55,7 @@ file "#{node['pureftpd']['dir']}/conf/PassivePortRange" do
 end
 
 file "#{node['pureftpd']['dir']}/conf/ForcePassiveIP" do
-  content { node['cloud']['public_ipv4'] }
+  content node['cloud']['public_ipv4']
   notifies :restart, resources(:service => pureftpd_service), :delayed
   only_if { node['pureftpd']['force_passive_ip'] }
 end

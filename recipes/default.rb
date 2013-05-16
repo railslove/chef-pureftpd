@@ -17,11 +17,11 @@
 # limitations under the License.
 #
 
-pureftpd_service = ["pure-ftpd", node[:pureftpd][:auth_addon]].join("-")
+pureftpd_service = ["pure-ftpd", node['pureftpd']['auth_addon']].join("-")
 
 package "pure-ftpd"
 
-package "pure-ftpd-#{node[:pureftpd][:auth_addon]}" if node[:pureftpd][:auth_addon]
+package "pure-ftpd-#{node['pureftpd']['auth_addon']}" if node['pureftpd']['auth_addon']
 
 service pureftpd_service do
   supports :status => true, :restart => true

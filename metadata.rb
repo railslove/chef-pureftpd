@@ -1,3 +1,4 @@
+name "pureftpd"
 maintainer       "Railslove GmbH"
 maintainer_email "lars@railslove.com"
 license          "Apache 2.0"
